@@ -35,9 +35,8 @@ function constructPhrase(arr, config) {
   let delimiter = config.del? config.del : '_'
 
   let phrase = arr.join(delimiter)
-  if (!capitalize) {
-    phrase = phrase.toLowerCase()
-  }
+  if (!capitalize) { phrase = phrase.toLowerCase() }
+
   return phrase
 }
 
@@ -51,8 +50,6 @@ const handler = (req, res) => {
     caps: req.query.caps
   })
 
-  console.log(  )
-  
   res.json({ phrase })
 }
 
