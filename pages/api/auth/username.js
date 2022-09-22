@@ -1,7 +1,9 @@
-const { adjectives, getRandomItem, laureates, allowCors } = require('../util');
+const { adjectives, laureates, allowCors, randomItem } = require('../util');
+
+randomItem
 
 const handler = (req, res) => {
-  const nameString = `${getRandomItem(adjectives)}-${getRandomItem(laureates)}`
+  const nameString = `${randomItem(adjectives)}-${randomItem(laureates)}`
   
   res.send({
     username: nameString.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase()
