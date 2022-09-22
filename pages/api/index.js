@@ -1,7 +1,7 @@
 const { allowCors } = require("./util")
 
 const handler = (req, res) => {
-  res.send({message: 'testing'})
+  res.send({message: ''})
 }
 
 module.exports = allowCors(handler)
