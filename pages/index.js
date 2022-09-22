@@ -10,7 +10,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container mx-auto">
-        <p>Testing 123</p>
       </div>
     </div>
   )
