@@ -4,9 +4,7 @@
  */
 
 const randomItem = (array) => {
-  let rand = Math.random() * array.length + 1;
-  let val = Math.floor(rand);
-  return array[val];
+  return array[Math.floor(Math.random()*array.length)];
 }
 /**
  * @returns random number between 1 and 9
