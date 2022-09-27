@@ -8,8 +8,6 @@ const handler = (req, res) => {
     : rollString = '1d20'
   
   const roller = new DiceRoller()
-  const str = decodeURI('3d6+4')
-  console.log(str)
 
   const roll = roller.roll(rollString)
   res.send(roll)
