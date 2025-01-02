@@ -1,4 +1,5 @@
-import sharp from 'sharp';
+// import sharp from 'sharp';
+import sharp from '@img/sharp-darwin-arm64/sharp.node'
 import axios from 'axios';
 import path from 'path';
 
