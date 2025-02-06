@@ -1,5 +1,3 @@
-const { allowCors } = require("./util")
-
 function calculateProjectCost(hours) {
   let rate;
 
