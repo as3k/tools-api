@@ -52,7 +52,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Missing required parameter 'url'." });
       }
       const rate = calculateProjectCost(hours);
-      return res.status(200).send(`The rate for this project is ` + formatCurrency(rate) + ' at ' + hourlyRate + '/hr.');
+      return res.status(200).send(`The rate for this project is ` + formatCurrency(rate) + ' at ' + hourlyRate(hours) + '/hr.');
 
     }
   } catch (error) {
