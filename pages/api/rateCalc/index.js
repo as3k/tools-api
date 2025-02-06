@@ -17,6 +17,23 @@ function calculateProjectCost(hours) {
   const totalCost = baseCost * 1.15; // adding a 15% buffer
   return totalCost;
 }
+
+function hourlyRate(hours) {
+  let rate;
+  if (hours <= 30) {
+    rate = 95;
+  } else if (hours <= 40) {
+    rate = 92;
+  } else if (hours <= 50) {
+    rate = 88;
+  } else if (hours <= 70) {
+    rate = 84;
+  } else {
+    rate = 80;
+  }
+  return formatCurrency(rate)
+}
+
 function formatCurrency(amount) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -35,7 +52,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Missing required parameter 'url'." });
       }
       const rate = calculateProjectCost(hours);
-      return res.status(200).send(`The rate for this project is ` + formatCurrency(rate) + '.');
+      return res.status(200).send(`The rate for this project is ` + formatCurrency(rate) + ' at ' + hourlyRate + '/hr.');
 
     }
   } catch (error) {
