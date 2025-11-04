@@ -1,0 +1,939 @@
+[
+  {
+    "set": "Kindness",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Offer to help someone clean up after playtime."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I make the world better when I’m kind."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Say something nice to the person sitting next to you."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Hold the door or make space for someone today."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "Kind words can change someone’s day, and I have them."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Draw a picture or write a note to make someone smile."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Share your toys, crayons, or snacks with a friend."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I’m proud to be someone who cares about others."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Ask someone, 'How are you feeling?' and really listen."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Give a compliment about effort, like 'You worked hard!.'"
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "Every kind act I do makes my heart stronger."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Let someone go first in line or during a game."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Say 'thank you' to someone who helps you today."
+      },
+      {
+        "index": 14,
+        "type": "action",
+        "text": "Do something helpful without being asked."
+      },
+      {
+        "index": 15,
+        "type": "affirmation",
+        "text": "I like being a helper and spreading kindness."
+      },
+      { "index": 16, "type": "action", "text": "Smile at three people today." },
+      {
+        "index": 17,
+        "type": "action",
+        "text": "Pick up something that isn’t yours and put it away."
+      },
+      {
+        "index": 18,
+        "type": "affirmation",
+        "text": "Kindness always starts with me."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Invite someone new to play with you."
+      },
+      {
+        "index": 20,
+        "type": "action",
+        "text": "Say, 'You’re awesome,' and tell them why."
+      }
+    ]
+  },
+  {
+    "set": "Respect",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Listen when someone else is talking."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I show respect by treating others the way I want to be treated."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Ask before using something that isn’t yours."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Say 'please' and 'thank you' today."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "I can disagree kindly and still be respectful."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Keep your space clean and tidy for everyone."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Let someone go ahead of you in line."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "Respect means I care about others’ feelings and things."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Use a calm voice, even when you feel upset."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Say something nice about someone’s effort or creativity."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "I am proud to show good manners."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Take turns and wait patiently for yours."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Be gentle with things that belong to others."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "My words and actions show I care about others."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Thank someone who helps you today."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Include someone who’s being left out."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "Respect helps everyone feel safe and happy."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Keep your hands and feet to yourself."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Speak kindly to adults, teachers, and friends."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I respect myself by making good choices."
+      }
+    ]
+  },
+  {
+    "set": "Courage",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Try something new, even if it feels scary."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I can do brave things, even when I’m nervous."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Stand up for someone who needs help."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Raise your hand to share an idea in class."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "Being brave means I try, even if I might make a mistake."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Tell the truth, even when it’s hard."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Ask a question when you don’t understand something."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I can be scared and brave at the same time."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Try again after something didn’t work out."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Invite someone new to play or talk with you."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "Courage grows when I practice being brave."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Do something kind without being asked."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Apologize if you hurt someone’s feelings."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I am strong, smart, and brave."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Try a food, game, or activity you haven’t tried before."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Speak up for what’s right, even if no one else does."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "I’m proud of myself when I try my best."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Ask someone if they’d like to be friends."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Finish something you started, even if it’s hard."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I am brave enough to be myself."
+      }
+    ]
+  },
+  {
+    "set": "Perseverance",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Try again when something doesn’t work the first time."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I can do hard things, even when they take time."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Finish a task before starting a new one today."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Take a deep breath and keep going when it gets tricky."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "Every time I try again, I get stronger."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Work on something a little longer than you did yesterday."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Break a big job into smaller steps and do one right now."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "Mistakes help me learn and grow."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Ask for help and then try one more time on your own."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Keep working until you feel proud of your effort."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "I don’t give up when things are hard."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Try something new that used to feel too hard."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Tell someone about something you worked hard to finish."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I am proud of my effort, not just my results."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Take one more try before asking for help."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Encourage someone else to keep going too."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "Even small progress counts — I’m doing great."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Look back at something you’ve improved at since you started."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Remind yourself, 'I can figure this out.'"
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I am strong, patient, and brave enough to keep trying."
+      }
+    ]
+  },
+  {
+    "set": "Confidence",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Say one thing you like about yourself today."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I believe in myself and what I can do."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Try something new, even if you feel unsure."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Stand tall, smile, and walk like you mean it."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "I am brave enough to try new things."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Tell someone about something you’re proud of."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Ask a question when you’re curious."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I’m good at learning, growing, and figuring things out."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Practice saying something kind to yourself in the mirror."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Take your time and do your best — that’s enough."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "I can do things that used to feel hard."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Try helping someone else — confidence grows when we share it."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Speak clearly and look at people when you talk."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I’m proud of who I am becoming."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Try again after a mistake — that’s real confidence."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Do one small thing today all by yourself."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "I don’t have to be perfect to be proud of myself."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Say 'I can do this' before starting something new."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Share something you made or built with someone else."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I am confident, capable, and full of great ideas."
+      }
+    ]
+  },
+  {
+    "set": "Gratitude",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Say thank you to someone who helped you today."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I’m thankful for the people who care about me."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Write or draw three things that make you happy."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Tell a friend or teacher you appreciate them."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "Good things happen around me every day."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Notice something beautiful outside and say, 'I’m glad I saw that.'"
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Thank someone who usually doesn’t get thanked — like the janitor or lunch helper."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I’m grateful for today and the little things in it."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Share something you’re thankful for during dinner or class."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Make a card or note to show appreciation to someone special."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "I can always find something to be thankful for."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Say thank you and look the person in the eyes."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Think of one person who makes you feel happy and say why."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I feel good when I notice what’s good."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Pick three things in your room that make you thankful."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Write a thank-you note or draw a picture for someone."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "Gratitude helps me see how lucky I am."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Take a minute to think of one great thing that happened today."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Say something nice to a person who made your day easier."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I’m thankful for today, tomorrow, and all I have."
+      }
+    ]
+  },
+  {
+    "set": "Honesty",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Tell the truth, even if it feels hard."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I am brave enough to tell the truth."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Admit when you made a mistake and try to fix it."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Be honest about how you feel with someone you trust."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "Being honest makes me trustworthy."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Tell the truth, even when no one is watching."
+      },
+      { "index": 7, "type": "action", "text": "Keep your promises today." },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I feel proud when I tell the truth."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "If you forget something, tell the truth instead of making up a story."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Tell someone one thing you’re thankful for about them."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "Honesty helps others trust me."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Say what you mean in a kind way."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Own up to something small today and fix it right away."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I can be kind and honest at the same time."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "If you see something wrong, tell an adult you trust."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Practice saying 'That was my fault' and how to make it better."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "I tell the truth because it feels good inside."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Think before you speak to make sure your words are true and kind."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Return something that doesn’t belong to you."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "Being honest shows my heart is strong and good."
+      }
+    ]
+  },
+  {
+    "set": "Responsibility",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Clean up your space without being asked."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I can be trusted to take care of my things."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Finish your homework or task before playing."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Feed a pet, water a plant, or care for something small."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "I feel proud when I do what I say I’ll do."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Put your backpack, shoes, or toys where they belong."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Remind yourself of one thing you’re responsible for today."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I take care of myself and the things I use."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Help someone finish a job or clean-up task."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "Be on time for something today."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "Responsibility means doing my best, even when no one’s watching."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Ask, 'What can I do to help?' before being told."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Do something helpful around the house all by yourself."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I am someone others can count on."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Take care of your body — brush teeth, wash hands, get ready on time."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Do your best work, even when no one is checking."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "I’m proud of myself when I follow through."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Make your bed or tidy your room before starting your day."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Keep track of your things and return them where they go."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "I can be responsible, dependable, and kind."
+      }
+    ]
+  },
+  {
+    "set": "Empathy",
+    "cards": [
+      {
+        "index": 1,
+        "type": "action",
+        "text": "Ask someone, 'How are you feeling?' and really listen."
+      },
+      {
+        "index": 2,
+        "type": "affirmation",
+        "text": "I care about how others feel."
+      },
+      {
+        "index": 3,
+        "type": "action",
+        "text": "Notice when someone looks sad and see if you can help."
+      },
+      {
+        "index": 4,
+        "type": "action",
+        "text": "Share your toys, space, or time with someone who needs it."
+      },
+      {
+        "index": 5,
+        "type": "affirmation",
+        "text": "I can put myself in someone else’s shoes."
+      },
+      {
+        "index": 6,
+        "type": "action",
+        "text": "Say kind words when someone makes a mistake."
+      },
+      {
+        "index": 7,
+        "type": "action",
+        "text": "Ask someone new to join your game or group."
+      },
+      {
+        "index": 8,
+        "type": "affirmation",
+        "text": "I’m a good friend because I listen and care."
+      },
+      {
+        "index": 9,
+        "type": "action",
+        "text": "Give a hug, high-five, or smile to someone who needs it."
+      },
+      {
+        "index": 10,
+        "type": "action",
+        "text": "If someone is upset, ask what might make them feel better."
+      },
+      {
+        "index": 11,
+        "type": "affirmation",
+        "text": "I show empathy when I listen with my heart."
+      },
+      {
+        "index": 12,
+        "type": "action",
+        "text": "Compliment someone who looks nervous or shy."
+      },
+      {
+        "index": 13,
+        "type": "action",
+        "text": "Say 'I understand' when someone tells you how they feel."
+      },
+      {
+        "index": 14,
+        "type": "affirmation",
+        "text": "I try to see things from others’ points of view."
+      },
+      {
+        "index": 15,
+        "type": "action",
+        "text": "Offer to help a classmate who’s struggling."
+      },
+      {
+        "index": 16,
+        "type": "action",
+        "text": "Think about how your actions affect others."
+      },
+      {
+        "index": 17,
+        "type": "affirmation",
+        "text": "I can make people feel seen and understood."
+      },
+      {
+        "index": 18,
+        "type": "action",
+        "text": "Say something kind to someone who seems left out."
+      },
+      {
+        "index": 19,
+        "type": "action",
+        "text": "Listen to someone’s story without interrupting."
+      },
+      {
+        "index": 20,
+        "type": "affirmation",
+        "text": "Empathy helps me connect and care for others."
+      }
+    ]
+  }
+]
