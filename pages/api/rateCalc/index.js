@@ -1,3 +1,7 @@
+// API route that calculates a buffered project quote based on hour tiers, returning the
+// computed total alongside the effective hourly rate for the requested hours.
+
+// Example: GET /api/rateCalc?hours=42 → "The rate for this project is $4,420 at $92/hr."
 function calculateProjectCost(hours) {
   let rate;
 

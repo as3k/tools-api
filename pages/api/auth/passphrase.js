@@ -1,3 +1,6 @@
+// API route that builds customizable passphrases from word lists and options like
+// capitalization, delimiters, special characters, and numbers.
+// Example: GET /api/auth/passphrase?capFirst=true&num=42 → { "phrase": "Brisk-Meteor-42" }
 const { allowCors, constructPhrase, wordArr } = require('../util');
 
 const handler = (req, res) => {  
@@ -20,4 +23,7 @@ const handler = (req, res) => {
   res.json({ phrase })
 }
 
-module.exports = allowCors(handler)
+const wrappedHandler = allowCors(handler)
+
+module.exports = wrappedHandler
+module.exports.default = wrappedHandler

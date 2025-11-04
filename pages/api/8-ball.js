@@ -1,3 +1,5 @@
+// API route that returns a randomized Magic 8-Ball style response with CORS enabled.
+// Example: GET /api/8-ball → { "message": "HELL YEA!" }
 const { allowCors, randomItem } = require("./util")
 
 let replies = [

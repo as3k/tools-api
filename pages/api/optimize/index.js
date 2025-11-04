@@ -1,3 +1,8 @@
+// API route that optimizes images via sharp, accepting either a remote URL (GET) or
+// uploaded file/blob (POST) and returning a WebP response.
+
+// Example (GET): /api/optimize?url=https://example.com/photo.jpg&width=800&quality=75
+// Example (POST): multipart/form-data with `image` file plus optional width/quality fields.
 import sharp from 'sharp';
 import axios from 'axios';
 import path from 'path';
