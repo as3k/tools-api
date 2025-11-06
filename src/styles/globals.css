@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --aspect-card: 7/5;
+}
+
+.oswald-text {
+  font-family: "Oswald", sans-serif;
+}
