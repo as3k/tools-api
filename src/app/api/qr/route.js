@@ -52,16 +52,164 @@ export const runtime = "nodejs"
 
 export const OPTIONS = () => corsPreflight()
 
+// Helper functions to generate QR data strings for different types
+const generateQRData = (type, params) => {
+  switch (type) {
+    case "url":
+      return generateUrlData(params)
+    case "wifi":
+      return generateWifiData(params)
+    case "vcard":
+      return generateVCardData(params)
+    case "email":
+      return generateEmailData(params)
+    case "sms":
+      return generateSmsData(params)
+    case "phone":
+      return generatePhoneData(params)
+    case "text":
+      return generateTextData(params)
+    default:
+      throw new Error(`Unsupported QR type: ${type}`)
+  }
+}
+
+const generateUrlData = params => {
+  const { url, source, medium } = params
+
+  if (!url) {
+    throw new Error("URL parameter is required for type 'url'")
+  }
+
+  try {
+    const finalUrl = new URL(url)
+
+    if (source) {
+      finalUrl.searchParams.set("utm_source", source)
+    }
+
+    if (medium) {
+      finalUrl.searchParams.set("utm_medium", medium)
+    }
+
+    return finalUrl.toString()
+  } catch (error) {
+    throw new Error("Invalid URL format")
+  }
+}
+
+const generateWifiData = params => {
+  const { ssid, password, security = "WPA", hidden = false } = params
+
+  if (!ssid) {
+    throw new Error("SSID parameter is required for type 'wifi'")
+  }
+
+  // WiFi QR format: WIFI:T:WPA;S:mynetwork;P:mypassword;H:false;;
+  const securityType = security.toUpperCase()
+  const hiddenFlag = hidden === true || hidden === "true" ? "true" : "false"
+
+  // Escape special characters in SSID and password
+  const escapedSsid = ssid.replace(/([\\";,:])/g, "\\$1")
+  const escapedPassword = password ? password.replace(/([\\";,:])/g, "\\$1") : ""
+
+  if (securityType === "nopass" || !password) {
+    return `WIFI:T:nopass;S:${escapedSsid};H:${hiddenFlag};;`
+  }
+
+  return `WIFI:T:${securityType};S:${escapedSsid};P:${escapedPassword};H:${hiddenFlag};;`
+}
+
+const generateVCardData = params => {
+  const { name, email, phone, company, title, url, address } = params
+
+  if (!name) {
+    throw new Error("Name parameter is required for type 'vcard'")
+  }
+
+  // Split name into first and last (simple approach)
+  const nameParts = name.trim().split(" ")
+  const firstName = nameParts[0] || ""
+  const lastName = nameParts.slice(1).join(" ") || ""
+
+  // vCard 3.0 format
+  let vcard = "BEGIN:VCARD\n"
+  vcard += "VERSION:3.0\n"
+  vcard += `N:${lastName};${firstName};;;\n`
+  vcard += `FN:${name}\n`
+
+  if (company) vcard += `ORG:${company}\n`
+  if (title) vcard += `TITLE:${title}\n`
+  if (phone) vcard += `TEL:${phone}\n`
+  if (email) vcard += `EMAIL:${email}\n`
+  if (url) vcard += `URL:${url}\n`
+  if (address) vcard += `ADR:;;${address};;;;\n`
+
+  vcard += "END:VCARD"
+
+  return vcard
+}
+
+const generateEmailData = params => {
+  const { to, subject, body } = params
+
+  if (!to) {
+    throw new Error("To parameter is required for type 'email'")
+  }
+
+  let emailUrl = `mailto:${to}`
+  const queryParams = []
+
+  if (subject) queryParams.push(`subject=${encodeURIComponent(subject)}`)
+  if (body) queryParams.push(`body=${encodeURIComponent(body)}`)
+
+  if (queryParams.length > 0) {
+    emailUrl += `?${queryParams.join("&")}`
+  }
+
+  return emailUrl
+}
+
+const generateSmsData = params => {
+  const { phone, message } = params
+
+  if (!phone) {
+    throw new Error("Phone parameter is required for type 'sms'")
+  }
+
+  // SMS format varies by platform, but this works on most devices
+  if (message) {
+    return `sms:${phone}?body=${encodeURIComponent(message)}`
+  }
+
+  return `sms:${phone}`
+}
+
+const generatePhoneData = params => {
+  const { number } = params
+
+  if (!number) {
+    throw new Error("Number parameter is required for type 'phone'")
+  }
+
+  return `tel:${number}`
+}
+
+const generateTextData = params => {
+  const { content } = params
+
+  if (!content) {
+    throw new Error("Content parameter is required for type 'text'")
+  }
+
+  return content
+}
+
 export const POST = async request => {
   try {
     // Get parameters from query string
     const { searchParams } = request.nextUrl
-    const queryUrl = searchParams.get("url")
-    const querySource = searchParams.get("source")
-    const queryMedium = searchParams.get("medium")
-    const queryLogo = searchParams.get("logo")
-    const queryRounded = searchParams.get("rounded")
-    const querySize = searchParams.get("size")
+    const allParams = Object.fromEntries(searchParams.entries())
 
     // Get parameters from body
     let bodyParams = {}
@@ -72,12 +220,13 @@ export const POST = async request => {
     }
 
     // Merge params (body takes precedence over query params)
-    const url = bodyParams.url || queryUrl
-    const source = bodyParams.source || querySource
-    const medium = bodyParams.medium || queryMedium
-    const logo = bodyParams.logo !== undefined ? bodyParams.logo : queryLogo
-    const rounded = bodyParams.rounded !== undefined ? bodyParams.rounded : queryRounded
-    const size = bodyParams.size || querySize
+    const params = { ...allParams, ...bodyParams }
+
+    // Extract common parameters
+    const type = params.type || "url"
+    const logo = params.logo
+    const rounded = params.rounded
+    const size = params.size
 
     // Parse booleans
     const withLogo = logo === true || logo === "true" || logo === "1"
@@ -86,35 +235,13 @@ export const POST = async request => {
     // Parse size with default of 1024
     const qrSize = size ? parseInt(size, 10) : 1024
 
-    // Validate required URL parameter
-    if (!url) {
-      return new Response(
-        JSON.stringify({ error: "URL parameter is required" }),
-        {
-          status: 400,
-          headers: {
-            "Content-Type": "application/json",
-            ...corsHeaders,
-          },
-        }
-      )
-    }
-
-    // Build final URL with UTM parameters if provided
-    let finalUrl
+    // Generate QR data based on type
+    let qrData
     try {
-      finalUrl = new URL(url)
-
-      if (source) {
-        finalUrl.searchParams.set("utm_source", source)
-      }
-
-      if (medium) {
-        finalUrl.searchParams.set("utm_medium", medium)
-      }
+      qrData = generateQRData(type, params)
     } catch (error) {
       return new Response(
-        JSON.stringify({ error: "Invalid URL format" }),
+        JSON.stringify({ error: error.message }),
         {
           status: 400,
           headers: {
@@ -133,10 +260,10 @@ export const POST = async request => {
 
     if (withRounded) {
       // Use qr-code-styling for rounded corners
-      qrBuffer = await generateRoundedQR(finalUrl.toString(), errorCorrectionLevel, qrSize)
+      qrBuffer = await generateRoundedQR(qrData, errorCorrectionLevel, qrSize)
     } else {
       // Use standard qrcode library
-      qrBuffer = await QRCode.toBuffer(finalUrl.toString(), {
+      qrBuffer = await QRCode.toBuffer(qrData, {
         type: "png",
         width: qrSize,
         margin: 2,

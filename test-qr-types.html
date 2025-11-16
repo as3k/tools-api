@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Types Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .qr-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .qr-card h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+        .qr-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .qr-card .params {
+            font-size: 12px;
+            color: #666;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .status.loading {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Code Types Test</h1>
+    <p>Testing all available QR code types with the API</p>
+
+    <div class="grid" id="qr-grid"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api/qr';
+
+        const tests = [
+            {
+                name: 'URL (Default)',
+                params: {
+                    url: 'https://example.com',
+                    source: 'test',
+                    medium: 'qrcode'
+                }
+            },
+            {
+                name: 'URL with Type Parameter',
+                params: {
+                    type: 'url',
+                    url: 'https://claude.ai',
+                    rounded: 'true'
+                }
+            },
+            {
+                name: 'WiFi - WPA',
+                params: {
+                    type: 'wifi',
+                    ssid: 'MyNetwork',
+                    password: 'SecurePassword123',
+                    security: 'WPA'
+                }
+            },
+            {
+                name: 'WiFi - No Password',
+                params: {
+                    type: 'wifi',
+                    ssid: 'OpenNetwork',
+                    security: 'nopass'
+                }
+            },
+            {
+                name: 'vCard Contact',
+                params: {
+                    type: 'vcard',
+                    name: 'John Doe',
+                    email: 'john@example.com',
+                    phone: '+1234567890',
+                    company: 'Acme Inc',
+                    title: 'Software Engineer'
+                }
+            },
+            {
+                name: 'Email',
+                params: {
+                    type: 'email',
+                    to: 'hello@example.com',
+                    subject: 'QR Code Test',
+                    body: 'This email was sent via QR code!'
+                }
+            },
+            {
+                name: 'SMS',
+                params: {
+                    type: 'sms',
+                    phone: '+1234567890',
+                    message: 'Hello from QR code!'
+                }
+            },
+            {
+                name: 'Phone',
+                params: {
+                    type: 'phone',
+                    number: '+1234567890'
+                }
+            },
+            {
+                name: 'Plain Text',
+                params: {
+                    type: 'text',
+                    content: 'Hello, World! This is a plain text QR code.'
+                }
+            }
+        ];
+
+        async function testQRCode(test, container) {
+            const statusDiv = container.querySelector('.status');
+            const img = container.querySelector('img');
+
+            try {
+                statusDiv.textContent = 'Generating...';
+                statusDiv.className = 'status loading';
+
+                const params = new URLSearchParams(test.params);
+                const url = `${API_BASE}?${params.toString()}`;
+
+                const response = await fetch(url, { method: 'POST' });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Failed to generate QR code');
+                }
+
+                const blob = await response.blob();
+                const imageUrl = URL.createObjectURL(blob);
+
+                img.src = imageUrl;
+                img.onload = () => {
+                    statusDiv.textContent = '✓ Generated successfully';
+                    statusDiv.className = 'status success';
+                };
+
+            } catch (error) {
+                statusDiv.textContent = `✗ Error: ${error.message}`;
+                statusDiv.className = 'status error';
+                console.error('QR generation failed:', test.name, error);
+            }
+        }
+
+        function createQRCard(test) {
+            const card = document.createElement('div');
+            card.className = 'qr-card';
+
+            const paramsStr = JSON.stringify(test.params, null, 2);
+
+            card.innerHTML = `
+                <h3>${test.name}</h3>
+                <img alt="${test.name} QR Code" />
+                <div class="status loading">Initializing...</div>
+                <div class="params">${paramsStr}</div>
+            `;
+
+            return card;
+        }
+
+        // Initialize all tests
+        const grid = document.getElementById('qr-grid');
+        tests.forEach(test => {
+            const card = createQRCard(test);
+            grid.appendChild(card);
+            testQRCode(test, card);
+        });
+    </script>
+</body>
+</html>
