@@ -205,7 +205,7 @@ const generateTextData = params => {
   return content
 }
 
-export const POST = async request => {
+const handleRequest = async request => {
   try {
     // Get parameters from query string
     const { searchParams } = request.nextUrl
@@ -294,3 +294,6 @@ export const POST = async request => {
     )
   }
 }
+
+export const GET = handleRequest
+export const POST = handleRequest
