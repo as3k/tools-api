@@ -7,10 +7,12 @@ const TEMPLATES = [
   { name: "balanced-celestial", slots: ["adverb", "texture", "drink", "abstract", "predicate"], slugSafe: false, securityOnly: false },
   { name: "balanced-smooth", slots: ["mood", "flavor", "drink", "predicate"], slugSafe: false, securityOnly: false },
   { name: "balanced-minimal", slots: ["mood", "flavor", "drink", "abstract"], slugSafe: false, securityOnly: false },
+  { name: "balanced-core", slots: ["mood", "flavor", "drink"], slugSafe: false, securityOnly: false },
   { name: "security-chaos", slots: ["adverb", "texture", "flavor", "drink", "abstract", "predicate"], slugSafe: false, securityOnly: true },
   { name: "security-ritual", slots: ["adverb", "mood", "flavor", "drink", "abstract", "predicate"], slugSafe: false, securityOnly: true },
   { name: "security-night-shift", slots: ["texture", "flavor", "mood", "drink", "abstract", "predicate"], slugSafe: false, securityOnly: true },
   { name: "security-compact", slots: ["texture", "flavor", "mood", "drink", "abstract"], slugSafe: false, securityOnly: true },
+  { name: "security-core", slots: ["texture", "flavor", "mood", "drink"], slugSafe: false, securityOnly: true },
   { name: "slug-classic", slots: ["flavor", "mood", "drink"], slugSafe: true, securityOnly: false },
   { name: "slug-abstract", slots: ["mood", "drink", "abstract"], slugSafe: true, securityOnly: false },
 ]
@@ -89,6 +91,7 @@ const PASS_PHRASE_DEFAULTS = {
   category: "mixed",
   delimiter: "-",
   includeAdverb: true,
+  includeAbstract: true,
   includePredicate: true,
   includeSpecialChar: true,
   includeNumber: true,
@@ -114,6 +117,7 @@ const normalizeOptions = (options = {}) => {
   const securityGrade = options.securityGrade ?? PASS_PHRASE_DEFAULTS.securityGrade
   const includeSpecialChar = options.includeSpecialChar ?? (securityGrade ? true : PASS_PHRASE_DEFAULTS.includeSpecialChar)
   const includeAdverb = options.includeAdverb ?? (securityGrade ? true : PASS_PHRASE_DEFAULTS.includeAdverb)
+  const includeAbstract = options.includeAbstract ?? PASS_PHRASE_DEFAULTS.includeAbstract
   const includePredicate = options.includePredicate ?? (securityGrade ? true : PASS_PHRASE_DEFAULTS.includePredicate)
   const includeNumber = options.includeNumber ?? PASS_PHRASE_DEFAULTS.includeNumber
   const numberOfDigits = includeNumber
@@ -126,6 +130,7 @@ const normalizeOptions = (options = {}) => {
     delimiter: options.delimiter ?? PASS_PHRASE_DEFAULTS.delimiter,
     template: options.template ?? "auto",
     includeAdverb,
+    includeAbstract,
     includePredicate,
     includeSpecialChar,
     includeNumber,
@@ -155,6 +160,7 @@ const selectTemplate = (options, rng) => {
 
   const preferred = pool.filter(template => {
     if (options.includeAdverb && !template.slots.includes("adverb")) return false
+    if (options.includeAbstract && !template.slots.includes("abstract")) return false
     if (options.includePredicate && !template.slots.includes("predicate")) return false
     return true
   })
@@ -168,6 +174,7 @@ const isValidTemplate = (template, options) => {
   if (options.securityGrade && !template.securityOnly) return false
   if (!options.securityGrade && template.securityOnly) return false
   if (!options.includeAdverb && template.slots.includes("adverb")) return false
+  if (!options.includeAbstract && template.slots.includes("abstract")) return false
   if (!options.includePredicate && template.slots.includes("predicate")) return false
   return true
 }

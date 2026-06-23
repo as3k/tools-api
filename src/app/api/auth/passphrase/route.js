@@ -32,6 +32,7 @@ export const GET = request => {
     template: searchParams.get("template") ?? undefined,
     delimiter: searchParams.get("del") ?? searchParams.get("delimiter") ?? "_",
     includeAdverb: truthy(searchParams.get("adverb")),
+    includeAbstract: truthy(searchParams.get("abstract")),
     includePredicate: truthy(searchParams.get("predicate")),
     includeSpecialChar: truthy(searchParams.get("specialCharacter")),
     includeNumber: truthy(searchParams.get("num")),
