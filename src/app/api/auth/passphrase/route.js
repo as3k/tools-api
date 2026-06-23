@@ -22,10 +22,16 @@ const parseSpecialChars = value => {
   return Array.from(new Set(value.split("")))
 }
 
+const parsePrefix = value => {
+  if (value == null) return ""
+  return String(value)
+}
+
 const capFirstOnly = value => value.charAt(0).toUpperCase() + value.slice(1)
 
 export const GET = request => {
   const { searchParams } = request.nextUrl
+  const prefix = parsePrefix(searchParams.get("prefix"))
 
   const phrase = generatePassphrase({
     category: searchParams.get("category") ?? undefined,
@@ -44,7 +50,9 @@ export const GET = request => {
     specialChars: parseSpecialChars(searchParams.get("specialChars")),
   })
 
+  const finalPhrase = truthy(searchParams.get("capFirst")) ? capFirstOnly(phrase) : phrase
+
   return corsJson({
-    phrase: truthy(searchParams.get("capFirst")) ? capFirstOnly(phrase) : phrase,
+    phrase: `${prefix}${finalPhrase}`,
   })
 }

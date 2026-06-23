@@ -70,8 +70,10 @@ const guide = {
       methods: ["GET"],
       summary: "Generates a brewphrase-powered passphrase with optional category, template, and security controls.",
       query: [
+        { name: "prefix", description: "String prepended to the generated passphrase, ex: sk_." },
         { name: "capFirst", description: "Capitalize only the first character of the final passphrase (truthy string)." },
         { name: "adverb", description: "Include an adverb slot (truthy string)." },
+        { name: "abstract", description: "Include the abstract noun slot like 'oasis' or 'canopy' (truthy string)." },
         { name: "predicate", description: "Include a predicate slot like 'glows' or 'warms' (truthy string)." },
         { name: "del", description: "Custom delimiter between words. Default '_' for backwards compatibility." },
         { name: "specialCharacter", description: "Include a special character suffix (truthy string)." },
@@ -85,7 +87,7 @@ const guide = {
         { name: "specialChars", description: "Override the symbol pool, ex: !?#" },
         { name: "seed", description: "Deterministic seed for repeatable outputs." },
       ],
-      sample: "/api/auth/passphrase?category=tea&securityGrade=1&specialCharacter=1&num=1&digits=4",
+      sample: "/api/auth/passphrase?prefix=sk_&category=tea&securityGrade=1&specialCharacter=1&num=1&digits=4",
     },
     {
       path: "/api/values",
