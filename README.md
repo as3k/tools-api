@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Lead-generation target spinner
+
+`GET /api/leadgen-target` returns ready-to-search, highly specific service/location targets around ZIP `92503` (Riverside/Arlington).
+
+```text
+/api/leadgen-target
+/api/leadgen-target?count=25&radius=20
+/api/leadgen-target?count=10&seed=42
+```
+
+`count` defaults to 12 and accepts 1–100. `radius` defaults to 30 miles and accepts 1–50. Supplying a `seed` makes a batch repeatable; omit it for a fresh spin. Each result includes a `query` such as `water heater repair in Arlington, Riverside, CA`, plus the underlying service category and approximate distance.
+
 ## Getting Started
 
 First, run the development server:
